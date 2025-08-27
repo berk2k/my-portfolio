@@ -5,10 +5,11 @@ const Navbar = () => {
 
   const links = [
     { name: "Home", href: "#home" },    
+    { name: "About Me", href: "#about" },
     { name: "Experience", href: "#experience" },
+    { name: "Packages", href: "#packages" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
-    { name: "Education", href: "#education" },
     { name: "Articles", href: "#blog" }, 
     { name: "Contact", href: "#contact" },
   ];
