@@ -7,6 +7,7 @@ const Navbar = () => {
     { name: "Home", href: "#home" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" }, 
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
   ];
@@ -15,7 +16,7 @@ const Navbar = () => {
     <nav className="fixed w-full top-0 left-0 bg-neutral-950/80 backdrop-blur-md z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Logo */}
-        <a href="#home" className="text-2xl font-bold text-white">
+        <a href="#home" className="text-2xl font-bold text-indigo-400">
           MyPortfolio
         </a>
 
@@ -25,7 +26,7 @@ const Navbar = () => {
             <li key={link.name}>
               <a
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-indigo-400 transition-colors"
               >
                 {link.name}
               </a>
@@ -36,7 +37,7 @@ const Navbar = () => {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-300 hover:text-white"
+          className="md:hidden text-gray-300 hover:text-indigo-400"
         >
           ☰
         </button>
@@ -50,7 +51,7 @@ const Navbar = () => {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="block text-gray-300 hover:text-white transition-colors"
+                  className="block text-gray-300 hover:text-indigo-400 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
