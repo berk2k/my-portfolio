@@ -21,7 +21,6 @@ export default function About() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_70%)]"></div>
 
       <div className="relative max-w-5xl mx-auto px-6">
-        {/* Başlık */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +31,6 @@ export default function About() {
           About Me
         </motion.h2>
 
-        {/* Tanıtım */}
         <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

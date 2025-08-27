@@ -5,7 +5,7 @@ import About from "./sections/About";
 import Experience from "./sections/Experience";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
-import Packages from "./sections/Packages"; // ✅ eklendi
+import Packages from "./sections/Packages"; 
 import Blog from "./sections/Blog";
 import Contact from "./sections/Contact";
 
