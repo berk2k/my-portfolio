@@ -2,11 +2,11 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="h-screen flex flex-col justify-center items-center text-center bg-neutral-900"
+      className="h-screen flex flex-col justify-center items-center text-center bg-neutral-950"
     >
       {/* İsim */}
       <h1 className="text-5xl md:text-6xl font-extrabold text-white">
-        Hi, I&apos;m <span className="text-indigo-400">Berk</span>
+        Hi, I&apos;m <span className="text-indigo-400">Berk Polat</span>
       </h1>
 
       {/* Kısa Tanıtım */}

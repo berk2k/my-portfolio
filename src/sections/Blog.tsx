@@ -25,12 +25,17 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-20 bg-neutral-950">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-snug text-center mb-12 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">
-            Blog
-        </h2>
+    <section
+      id="blog"
+      className="relative pt-12 pb-20 bg-gradient-to-b from-neutral-950 to-neutral-900 overflow-hidden"
+    >
+      {/* 🔹 Radial spotlight background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_70%)]"></div>
 
+      <div className="relative max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-snug text-center mb-12 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">
+          Blog
+        </h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, i) => (
@@ -40,10 +45,12 @@ export default function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-neutral-900 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition"
+              className="bg-neutral-950 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition"
             >
-              <h3 className="text-xl font-semibold text-white mb-2">{post.title}</h3>
-              
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {post.title}
+              </h3>
+
               <p className="text-gray-300 mt-3 mb-4">{post.description}</p>
 
               <a

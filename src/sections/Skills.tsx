@@ -52,12 +52,14 @@ const categories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-neutral-950">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-20 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">
-            Skills
-        </h2>
+    <section id="skills" className="relative pt-12 pb-20 bg-gradient-to-b from-neutral-950 to-neutral-900 overflow-hidden">
+      {/* 🔹 Radial spotlight background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_70%)]"></div>
 
+      <div className="relative max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-snug text-center mb-12 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">
+          Skills
+        </h2>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((cat, i) => (
@@ -67,7 +69,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-neutral-900 rounded-2xl shadow-lg p-8 hover:shadow-xl hover:bg-neutral-800 transition transform hover:-translate-y-2"
+              className="bg-neutral-950 rounded-2xl shadow-lg p-8 hover:shadow-xl hover:bg-neutral-800 transition transform hover:-translate-y-2"
             >
               <h3 className="text-2xl font-semibold mb-6 text-white">{cat.title}</h3>
               <ul className="space-y-4">
