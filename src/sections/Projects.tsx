@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
-import { SiNuget } from "react-icons/si";
 
 const projects = [
   {
