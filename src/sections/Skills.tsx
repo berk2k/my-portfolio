@@ -20,7 +20,6 @@ const categories = [
     title: "Frontend",
     skills: ["React", "TypeScript", "Tailwind CSS"],
   },
-
   {
     title: "Containerization",
     skills: ["Docker", "Docker Compose"],
@@ -32,7 +31,7 @@ const categories = [
       "Multi-Tenancy",
       "Domain-Driven Design (DDD)",
       "CQRS",
-      "API Gateway & Reverse Proxy"
+      "API Gateway & Reverse Proxy",
     ],
   },
   {
@@ -75,7 +74,7 @@ export default function Skills() {
                   <motion.li
                     key={skill}
                     whileHover={{ scale: 1.05, x: 5 }}
-                    className="flex items-center space-x-3 cursor-pointer"
+                    className="flex items-center space-x-3"
                   >
                     <FaArrowRight className="text-indigo-400" size={18} />
                     <span className="text-lg text-gray-200">{skill}</span>
