@@ -9,8 +9,8 @@ function App() {
       <Navbar />
       <main>
         <Home />
-        <Skills />
         <Experience />
+        <Skills />
       </main>
     </div>
   );
