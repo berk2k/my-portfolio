@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaArrowRight } from "react-icons/fa";
 
 const categories = [
   {
@@ -14,15 +13,11 @@ const categories = [
   },
   {
     title: "Cloud & DevOps",
-    skills: ["Azure Cloud", "CI/CD Pipelines", "Cloud-based Deployments"],
+    skills: ["Azure Cloud", "CI/CD Pipelines", "Cloud-based Deployments, Docker"],
   },
   {
     title: "Frontend",
     skills: ["React", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    title: "Containerization",
-    skills: ["Docker", "Docker Compose"],
   },
   {
     title: "Architecture & Design",
@@ -32,11 +27,8 @@ const categories = [
       "Domain-Driven Design (DDD)",
       "CQRS",
       "API Gateway & Reverse Proxy",
+      "Event-Driven Communication (RabbitMQ)",
     ],
-  },
-  {
-    title: "Messaging",
-    skills: ["RabbitMQ", "Event-Driven Communication"],
   },
   {
     title: "Software Engineering Practices",
@@ -52,7 +44,10 @@ const categories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative pt-12 pb-20 bg-gradient-to-b from-neutral-950 to-neutral-900 overflow-hidden">
+    <section
+      id="skills"
+      className="relative pt-12 pb-20 bg-gradient-to-b from-neutral-950 to-neutral-900 overflow-hidden"
+    >
       {/* 🔹 Radial spotlight background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_70%)]"></div>
 
@@ -71,7 +66,9 @@ export default function Skills() {
               viewport={{ once: true }}
               className="bg-neutral-950 rounded-2xl shadow-lg p-8 hover:shadow-xl hover:bg-neutral-800 transition transform hover:-translate-y-2"
             >
-              <h3 className="text-2xl font-semibold mb-6 text-white">{cat.title}</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-white">
+                {cat.title}
+              </h3>
               <ul className="space-y-4">
                 {cat.skills.map((skill) => (
                   <motion.li
@@ -79,7 +76,7 @@ export default function Skills() {
                     whileHover={{ scale: 1.05, x: 5 }}
                     className="flex items-center space-x-3"
                   >
-                    <FaArrowRight className="text-indigo-400" size={18} />
+                    <span className="text-indigo-400 text-lg">•</span>
                     <span className="text-lg text-gray-200">{skill}</span>
                   </motion.li>
                 ))}
