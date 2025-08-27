@@ -8,12 +8,12 @@ const experiences = [
     company: "Pre-launch SaaS Startup",
     date: "July 2025 – Present",
     details: [
-      "Leading a small team in the design and development of a multi-tenant SaaS platform tailored for small businesses.",
+      "Leading a small team in the design and development of a multi-tenant SaaS platforms tailored for small businesses.",
       "Designing system, database, and API architecture, with a focus on scalable, secure, multi-tenant design.",
       "Building and automating infrastructure using Docker, cloud deployments, CI/CD pipelines, and monitoring tools.",
       "Developed and published a reusable Mediator-based NuGet package to centralize cross-cutting concerns such as logging, validation, and exception handling.",
     ],
-    tags: ["SaaS", "Multi-Tenancy", "Docker", "CI/CD", "Cloud"],
+    tags: ["SaaS", "Multi-Tenant Architecture", "Docker", "CI/CD", "Cloud"],
   },
   {
     role: "Data Engineer Intern",

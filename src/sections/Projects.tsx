@@ -7,8 +7,8 @@ const projects = [
   {
     title: "TranscodeX - Video Transcoding System",
     description:
-      "Microservices-based platform that ingests raw video files, transcodes them into multiple formats, and compresses for efficient delivery. Built with Node.js, Docker, and Backblaze B2.",
-    tags: ["Node.js", "Docker", "Microservices", "Backblaze B2", "Cloud"],
+      "Microservices-based platform that ingests raw video files, transcodes them into multiple formats, and compresses for efficient delivery. Built with Node.js, Docker, PostgreSQL, and Backblaze B2.",
+    tags: ["Node.js", "PostgreSQL","Docker", "Microservices", "Backblaze B2", "Azure Cloud", "RabbitMQ", "CI/CD","Api Gateway"],
     github: "https://github.com/berk2k/TranscodeX"
 
   },
@@ -16,7 +16,7 @@ const projects = [
     title: "Docky Desktop - Docker Management App",
     description:
       "A desktop application built with WPF (.NET) for visual management of Docker containers and images.",
-    tags: [".NET", "WPF", "Docker", "Desktop"],
+    tags: [".NET Core", "WPF", "Docker", "Desktop"],
     github: "https://github.com/berk2k/Docky-Desktop"
  
   },
@@ -24,7 +24,7 @@ const projects = [
     title: "VetSoft",
     description:
       "Comprehensive web & mobile app for veterinary clinics, replacing paper-based management and enabling real-time updates for pet owners.",
-    tags: ["Python", ".NET", "MSSQL", "Mobile"],
+    tags: ["Python Flask Framework", ".NET Core", "MSSQL", "Mobile", "Azure Cloud"],
     github: "https://github.com/berk2k/VetSoft"
  
   },
@@ -32,7 +32,7 @@ const projects = [
     title: "Smart Bed",
     description:
       "Integrated hardware & software solution that monitors patient movements and alerts nurses in real time to abnormal activities.",
-    tags: ["IoT", "Healthcare", "Real-time", "Python"],
+    tags: ["IoT", "Healthcare", "Real-time", "Python","Oracle Cloud SQL"],
     github: "https://github.com/berk2k/Smart-Bed",
 
   },
@@ -40,7 +40,7 @@ const projects = [
     title: "Restaurant Ordering System",
     description:
       "Full-stack restaurant ordering platform with automated CI/CD pipelines via GitHub Actions and Render Cloud. Optimized for speed and accuracy.",
-    tags: ["React", "Node.js", "CI/CD", "Docker", "Cloud"],
+    tags: [".NET Core", "CI/CD", "Docker", "Cloud"],
     github: "https://github.com/berk2k/restaurant-project"
 
   },
