@@ -1,9 +1,15 @@
-export default function App() {
+import Navbar from "./components/Navbar";
+import Home from "./sections/Home";
+
+function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-neutral-900">
-      <h1 className="text-4xl font-bold text-white underline">
-        Hello world!
-      </h1>
+    <div className="bg-neutral-900 text-gray-100 font-sans">
+      <Navbar />
+      <main>
+        <Home />
+      </main>
     </div>
-  )
+  );
 }
+
+export default App;
