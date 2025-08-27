@@ -34,7 +34,7 @@ export default function Blog() {
 
       <div className="relative max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-snug text-center mb-12 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">
-          Blog
+          Articles
         </h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
