@@ -6,7 +6,6 @@ export default function Home() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.12),transparent_70%)]"></div>
 
-      {/* Content */}
       <div className="relative z-10">
 
         <h1 className="text-5xl md:text-6xl font-extrabold text-white">
