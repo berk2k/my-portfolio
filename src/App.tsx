@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
 import Skills from "./sections/Skills";
 import Experience from "./sections/Experience";
+import Education from "./sections/Education";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Home />
         <Experience />
         <Skills />
+        <Education />
       </main>
     </div>
   );
