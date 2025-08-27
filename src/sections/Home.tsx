@@ -4,7 +4,6 @@ export default function Home() {
       id="home"
       className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden bg-gradient-to-b from-neutral-950 to-neutral-900"
     >
-      {/* 🔹 Radial spotlight background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.12),transparent_70%)]"></div>
 
       {/* Content */}
