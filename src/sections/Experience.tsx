@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    role: "Software Engineer & Startup Co-founder",
-    company: "Pre-launch SaaS Startup",
+    role: "Software Engineer, Self-Employed",
+    company: "Pre-launch SaaS",
     date: "July 2025 – Present",
     details: [
-      "Leading a small team in the design and development of a multi-tenant SaaS platforms tailored for small businesses.",
+      "Building multi-tenant SaaS solutions with ASP.NET Core, React as part of a small team.",
       "Designing system, database, and API architecture, with a focus on scalable, secure, multi-tenant design.",
-      "Building and automating infrastructure using Docker, cloud deployments, CI/CD pipelines, and monitoring tools.",
-      "Developed and published a reusable Mediator-based NuGet package to centralize cross-cutting concerns such as logging, validation, and exception handling.",
+      "Built technical infrastructure: CI/CD pipelines (GitHub Actions → Cloud services), Docker.",
+      "Implemented observability (structured logs, request tracing, health checks) as cross-cutting pipelines",
     ],
     tags: ["SaaS", "Multi-Tenant Architecture", "Docker", "CI/CD", "Cloud"],
   },
@@ -20,8 +20,7 @@ const experiences = [
     company: "Vakifbank T.A.O, Istanbul, Turkey",
     date: "July 2023 – August 2023",
     details: [
-      "Wrote SQL queries to analyze and cleanse data from multiple sources.",
-      "Assisted in building and maintaining ETL processes for the data warehouse using Informatica.",
+      "Wrote SQL to analyze/cleanse multi-source data; assisted ETL to the DWH using Informatica.",
       "Collaborated within a Scrum team to coordinate daily tasks and project progress.",
     ],
     tags: ["SQL", "ETL", "Informatica", "Agile/Scrum"],
