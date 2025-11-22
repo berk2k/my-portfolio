@@ -1,11 +1,11 @@
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
 import About from "./sections/About";
-{/*  import Education from "./sections/Education";*/}
 import Experience from "./sections/Experience";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
-import Packages from "./sections/Packages"; 
+import Packages from "./sections/Packages";
+import Awards from "./sections/Awards"; 
 import Blog from "./sections/Blog";
 import Contact from "./sections/Contact";
 
@@ -15,12 +15,12 @@ function App() {
       <Navbar />
       <main>
         <Home />
-        <About />       
-        {/*  <Education />  */}  
+        <About />
         <Experience />
         <Skills />
         <Packages />
         <Projects />
+        <Awards /> 
         <Blog />
         <Contact />
       </main>

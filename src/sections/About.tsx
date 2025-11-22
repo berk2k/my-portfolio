@@ -32,26 +32,37 @@ export default function About() {
         </motion.h2>
 
         <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-gray-300 leading-relaxed mb-12 text-center max-w-3xl mx-auto"
-            >
-            I’m a software engineer who loves building{" "}
-            <span className="text-indigo-400 font-medium">
-                scalable, cloud-native systems
-            </span>
-            . Recently, I’ve been focusing on{" "}
-            <span className="text-indigo-400 font-medium">SaaS projects with a small team</span>. 
-            In my free time, I try to share what I learn by writing{" "}
-            <span className="text-indigo-400 font-medium">blog posts</span>, because I believe
-            knowledge grows when it’s shared.  
-            Beyond the technical side, I value{" "}
-            <span className="text-indigo-400 font-medium">
-                clean code, teamwork, and continuous learning.
-            </span>
-        </motion.p>
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-gray-300 leading-relaxed mb-12 text-center max-w-3xl mx-auto"
+          >
+          I’m a backend-leaning software engineer who builds
+          {" "}
+          <span className="text-indigo-400 font-medium">
+          scalable, cloud-native systems
+          </span>
+          {" "}using .NET and Node.js. My main focus is designing
+          {" "}
+          <span className="text-indigo-400 font-medium">
+          SaaS architectures, multi-tenant applications, and event-driven microservices
+          </span>
+          . I enjoy working on products end-to-end, from API design and database modeling to
+          containerization, observability, and CI/CD automation.
+
+
+          <br /><br />
+          I also share what I learn through
+          {" "}
+          <span className="text-indigo-400 font-medium">blog posts</span>, because
+          I believe knowledge grows when it’s shared. Beyond technical skills, I value
+          {" "}
+          <span className="text-indigo-400 font-medium">
+          clean code, clarity, and continuous learning
+          </span>
+          , and I’m always exploring tools that help build better systems.
+          </motion.p>
 
         {/* Education Timeline */}
         <div className="relative border-l border-gray-700 mt-16">

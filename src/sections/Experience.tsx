@@ -20,8 +20,8 @@ const experiences = [
     company: "Vakifbank T.A.O, Istanbul, Turkey",
     date: "July 2023 – August 2023",
     details: [
-      "Wrote SQL to analyze/cleanse multi-source data; assisted ETL to the DWH using Informatica.",
-      "Collaborated within a Scrum team to coordinate daily tasks and project progress.",
+      " Analyzed and cleansed multi-source datasets using Oracle SQL to improve data quality and reliability before loading into the data warehouse.",
+      "Supported ETL processes using Informatica, Python, Apache Spark contributing to accurate data integration.",
     ],
     tags: ["SQL", "ETL", "Informatica", "Agile/Scrum"],
   },

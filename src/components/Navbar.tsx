@@ -10,6 +10,7 @@ const Navbar = () => {
     { name: "Packages", href: "#packages" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Awards", href: "#awards" },
     { name: "Articles", href: "#blog" }, 
     { name: "Contact", href: "#contact" },
   ];
@@ -17,11 +18,8 @@ const Navbar = () => {
   return (
     <nav className="fixed w-full top-0 left-0 bg-neutral-900/80 backdrop-blur-md z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
-        {/* Logo 
-        <a href="#home" className="text-2xl font-bold text-indigo-400">
-          Berk Polat
-        </a>*/}
-        
+        {/* Logo */}
+        {/* <a href="#home" className="text-2xl font-bold text-indigo-400">Berk Polat</a> */}
 
         {/* Links (Desktop) */}
         <ul className="hidden md:flex space-x-8 ml-auto">
