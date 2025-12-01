@@ -28,7 +28,8 @@ const projects = [
       "Docker",
       "CI/CD"
     ],
-    demo: "https://randevuportali-demo.netlify.app/"
+    demo: "https://randevuportali-demo.netlify.app/",
+    docs: "https://randevuportali-docs.netlify.app/"
   },
 
   {
@@ -104,16 +105,31 @@ export default function Projects() {
               </div>
 
               <div className="flex gap-4">
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition"
-                >
-                  <FiExternalLink size={20} />
-                  <span>Live Demo</span>
-                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition"
+                  >
+                    <FiExternalLink size={20} />
+                    <span>Live Demo</span>
+                  </a>
+                )}
+
+                {project.docs && (
+                  <a
+                    href={project.docs}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition"
+                  >
+                    <FiExternalLink size={20} />
+                    <span>Technical Docs</span>
+                  </a>
+                )}
               </div>
+
             </motion.div>
           ))}
         </div>
