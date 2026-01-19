@@ -6,86 +6,72 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden bg-gradient-to-b from-neutral-950 to-neutral-900"
+      className="relative min-h-screen flex items-center justify-center
+                 bg-gradient-to-b from-neutral-950 to-neutral-900
+                 text-center overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.12),transparent_70%)]"></div>
+      {/* 🔹 Radial spotlight background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_70%)]"></div>
 
       <motion.div
-        className="relative z-10"
-        initial={{ opacity: 0, y: 30 }}
+        className="relative px-6 max-w-3xl"
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
       >
-        {/* MAIN TITLE */}
-        <motion.h1
-          className="text-5xl md:text-6xl font-extrabold text-white"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Hi, I&apos;m{" "}
-          <span className="text-indigo-400 drop-shadow-[0_0_15px_rgba(99,102,241,0.6)]">
-            Berk Polat
-          </span>
-        </motion.h1>
+        {/* TITLE */}
+        <h1 className="text-3xl md:text-4xl font-semibold text-white">
+          About Me
+        </h1>
 
-        {/* SUBTITLE */}
-        <motion.p
-          className="text-gray-400 mt-6 max-w-xl text-lg leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          Backend-focused software engineer building{" "}
-          <span className="text-indigo-400 font-medium">
-            scalable, cloud-native systems
-          </span>
-          ,{" "}
-          <span className="text-indigo-400 font-medium">
-            multi-tenant SaaS platforms
-          </span>{" "}
-          and{" "}
-          <span className="text-indigo-400 font-medium">
-            event-driven architectures.
-          </span>
-        </motion.p>
+        {/* SHORT SUMMARY */}
+        <p className="text-gray-400 mt-4 text-base md:text-lg">
+          Backend & systems-focused software engineer interested in scalable,
+          reliable, cloud-native systems and distributed architectures.
+        </p>
 
-        {/* TAGLINE */}
-        <motion.p
-          className="text-gray-500 mt-4 text-sm md:text-base"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          .NET • Node.js • Docker • Azure • CI/CD • Observability
-        </motion.p>
+        {/* MAIN TEXT */}
+        <p className="text-gray-400 mt-8 leading-relaxed text-sm md:text-base">
+          I design and build backend systems with a systems-oriented mindset,
+          focusing on multi-tenant SaaS platforms, event-driven microservices,
+          and observability-first architectures.
+          <br />
+          <br />
+          I enjoy working close to system boundaries such as APIs, databases,
+          messaging, and infrastructure, and understanding how design decisions
+          affect performance, reliability, and maintainability under real-world
+          constraints.
+        </p>
 
-        {/* CTA BUTTONS */}
-        <motion.div
-          className="mt-10 flex space-x-6 justify-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
+        {/* FOCUS */}
+        <p className="text-gray-500 mt-6 text-sm">
+          Backend Systems · Distributed Systems · Cloud Architecture
+        </p>
+
+        {/* STACK */}
+        <p className="text-gray-600 mt-2 text-sm">
+          .NET · Go · Node.js · Docker · Azure · CI/CD · Observability
+        </p>
+
+        {/* LINKS */}
+        <div className="mt-10 flex justify-center gap-6">
           <a
             href="https://github.com/berk2k"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 border border-gray-600 hover:bg-gray-800 text-gray-300 font-medium rounded-lg transition"
+            className="text-sm text-gray-400 hover:text-white transition"
           >
             GitHub
           </a>
-
           <a
             href="https://www.linkedin.com/in/berk2k"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition shadow-md shadow-indigo-700/40"
+            className="text-sm text-gray-400 hover:text-white transition"
           >
             LinkedIn
           </a>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

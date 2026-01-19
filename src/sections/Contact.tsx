@@ -1,35 +1,40 @@
 "use client";
 
-import { FaGithub, FaLinkedin} from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <section id="contact" className="pb-20 bg-neutral-950">
+    <section id="contact" className="py-20 bg-neutral-950">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-snug mb-8 bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">
+
+        {/* TITLE */}
+        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
           Contact
         </h2>
 
-        <p className="text-gray-300 text-lg mb-6">
-          Feel free to reach out for collaborations, opportunities, or just to say hi!
+        <p className="text-gray-400 text-base mb-8">
+          Feel free to reach out for collaboration, research, or engineering opportunities.
         </p>
 
-        <div className="flex justify-center space-x-6">
+        <div className="flex justify-center gap-8">
           <a
             href="https://github.com/berk2k"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-indigo-400 transition"
+            className="text-gray-400 hover:text-white transition"
+            aria-label="GitHub"
           >
-            <FaGithub size={28} />
+            <FaGithub size={26} />
           </a>
+
           <a
             href="https://linkedin.com/in/berk2k"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-indigo-400 transition"
+            className="text-gray-400 hover:text-white transition"
+            aria-label="LinkedIn"
           >
-            <FaLinkedin size={28} />
+            <FaLinkedin size={26} />
           </a>
         </div>
       </div>

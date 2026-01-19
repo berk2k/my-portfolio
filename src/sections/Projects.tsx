@@ -6,114 +6,161 @@ import { FiExternalLink } from "react-icons/fi";
 
 const projects = [
   {
-    title: "TranscodeX - Video Transcoding System",
+    title: "TranscodeX – Event-Driven Video Transcoding Platform",
     description:
-      "Microservices-based platform that ingests raw video files, transcodes them into multiple formats, and compresses for efficient delivery. Built with Node.js, Docker, PostgreSQL, and Backblaze B2.",
-    tags: ["Node.js", "PostgreSQL","Docker", "Microservices", "Backblaze B2", "Azure Cloud", "RabbitMQ", "CI/CD","Api Gateway"],
-    github: "https://github.com/berk2k/TranscodeX"
+      "A microservices-based system for ingesting, processing, and transcoding video files using asynchronous, event-driven workflows. Designed for scalability and fault isolation.",
+    tags: [
+      "Node.js",
+      "Docker",
+      "RabbitMQ",
+      "PostgreSQL",
+      "Microservices",
+      "Backblaze B2",
+      "Azure",
+      "CI/CD",
+    ],
+    github: "https://github.com/berk2k/TranscodeX",
   },
   {
-    title: "RandevuPortali – Multi-Tenant Appointment System",
+    title: "RandevuPortali",
     description:
-      "A multi-tenant appointment management platform designed with a strong focus on data isolation, security, and scalability. Includes complete backend architecture, domain modeling, API design, and tenant-aware workflows.",
+      "A multi-tenant appointment management system with strict tenant isolation, domain-driven backend design, and observability-first architecture.",
     tags: [
-      ".NET Core",
+      ".NET",
       "MSSQL",
-      "SaaS",
-      "Multi-Tenant Architecture",
+      "Multi-Tenancy",
+      "SaaS Architecture",
       "OpenTelemetry",
-      "Serilog",
       "Prometheus",
       "Grafana",
       "Docker",
-      "CI/CD"
     ],
     demo: "https://randevuportali-demo.netlify.app/",
-    docs: "https://randevuportali-docs.netlify.app/"
-  },
-
-  {
-    title: "Docky Desktop - Docker Management App",
-    description:
-      "A desktop application built with WPF (.NET) for visual management of Docker containers and images.",
-    tags: [".NET Core", "WPF", "Docker", "Desktop"],
-    github: "https://github.com/berk2k/Docky-Desktop"
+    docs: "https://randevuportali-docs.netlify.app/",
   },
   {
-    title: "VetSoft",
+    title: "Backpressure-Aware Log Processing Pipeline",
     description:
-      "Comprehensive web & mobile app for veterinary clinics, replacing paper-based management and enabling real-time updates for pet owners.",
-    tags: ["Python Flask Framework", ".NET Core", "MSSQL", "Mobile", "Azure Cloud"],
-    github: "https://github.com/berk2k/VetSoft"
+      "A concurrent log processing pipeline built in Go, designed to handle high-throughput workloads with backpressure control, batching, and graceful shutdown.",
+    tags: ["Go", "Concurrency", "Backpressure", "System Design", "Metrics"],
+    github: "https://github.com/berk2k/log-processing-pipeline",
   },
   {
-    title: "Smart Bed",
+    title: "FlowMediator – Lightweight CQRS Mediator",
     description:
-      "Integrated hardware & software solution that monitors patient movements and alerts nurses in real time to abnormal activities.",
-    tags: ["IoT", "Healthcare", "Real-time", "Python","Oracle Cloud SQL"],
-    github: "https://github.com/berk2k/Smart-Bed"
+      "A lightweight mediator library for .NET with pipeline behaviors, enabling clean separation of concerns and extensible cross-cutting logic.",
+    tags: [".NET", "CQRS", "Mediator Pattern", "Open Source", "NuGet"],
+    github: "https://github.com/berk2k/FlowMediator",
+    nuget: "https://www.nuget.org/packages/FlowMediator",
   },
   {
-    title: "Restaurant Ordering System",
+    title: "Concurrent Systems Programming (C / POSIX)",
     description:
-      "Full-stack restaurant ordering platform with automated CI/CD pipelines via GitHub Actions and Render Cloud. Optimized for speed and accuracy.",
-    tags: [".NET Core", "CI/CD", "Docker", "Cloud"],
-    github: "https://github.com/berk2k/restaurant-project"
-  }
+      "A systems programming project focused on concurrency, synchronization, and inter-process communication using POSIX threads and primitives.",
+    tags: ["C", "POSIX", "Concurrency", "Multithreading", "IPC"],
+    github: "https://github.com/berk2k/c-posix-concurrency",
+  },
+  {
+    title: "Docky Desktop – Docker Management Tool",
+    description:
+      "A desktop application for managing Docker containers and images, focused on improving local development workflows.",
+    tags: [".NET", "WPF", "Docker", "Developer Tooling"],
+    github: "https://github.com/berk2k/Docky-Desktop",
+  },
 ];
-
-const liveProjects = projects.filter(p => p.demo);
-const normalProjects = projects.filter(p => !p.demo);
 
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative pt-12 pb-20 bg-gradient-to-b from-neutral-950 to-neutral-900 overflow-hidden"
+      className="relative py-20 bg-gradient-to-b from-neutral-950 to-neutral-900 overflow-hidden"
     >
+      {/* 🔹 Radial spotlight background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.08),transparent_70%)]"></div>
 
       <div className="relative max-w-6xl mx-auto px-6">
+        {/* TITLE */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-semibold text-white text-center mb-14"
+        >
+          Selected Projects
+        </motion.h2>
 
-        {/* LIVE PROJECTS */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 leading-[1.2] bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
-          Live Projects
-        </h2>
-
-        <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2 mb-20">
-          {liveProjects.map((project, i) => (
+        {/* PROJECT LIST */}
+        <div className="grid gap-10 sm:grid-cols-1 lg:grid-cols-2">
+          {projects.map((project, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration: 0.6 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-neutral-950 rounded-xl p-6 shadow-md hover:shadow-xl hover:bg-neutral-900/80 transition transform hover:-translate-y-2"
+              className="bg-neutral-950 rounded-2xl p-6 
+                         hover:bg-neutral-800 transition shadow-lg"
             >
-              <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
+              {/* TITLE + LIVE BADGE */}
+              <h3 className="flex items-center gap-2 text-lg font-medium text-white mb-2">
+                {project.title}
+                {project.demo && (
+                  <span className="text-xs text-green-400">Live</span>
+                )}
+              </h3>
 
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                {project.description}
+              </p>
+
+              {/* TAGS */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 text-sm bg-green-500/20 text-green-400 rounded-full"
+                    className="text-xs px-2 py-1 rounded-full 
+                               bg-neutral-800 text-gray-300"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-4">
+              {/* LINKS */}
+              <div className="flex gap-4 text-sm">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-400 hover:text-white transition"
+                  >
+                    <FaGithub size={18} />
+                    GitHub
+                  </a>
+                )}
+
+                {project.nuget && (
+                  <a
+                    href={project.nuget}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition"
+                  >
+                    NuGet
+                  </a>
+                )}
+
                 {project.demo && (
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition"
+                    className="flex items-center gap-2 text-gray-400 hover:text-white transition"
                   >
-                    <FiExternalLink size={20} />
-                    <span>Live Demo</span>
+                    <FiExternalLink size={18} />
+                    Demo
                   </a>
                 )}
 
@@ -122,65 +169,16 @@ export default function Projects() {
                     href={project.docs}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition"
+                    className="flex items-center gap-2 text-gray-400 hover:text-white transition"
                   >
-                    <FiExternalLink size={20} />
-                    <span>Technical Docs</span>
+                    <FiExternalLink size={18} />
+                    Docs
                   </a>
                 )}
               </div>
-
             </motion.div>
           ))}
         </div>
-
-        {/* NORMAL PROJECTS */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 leading-[1.2] bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">
-          Projects
-        </h2>
-
-        <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
-          {normalProjects.map((project, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-neutral-950 rounded-xl p-6 shadow-md hover:shadow-xl hover:bg-neutral-900/80 transition transform hover:-translate-y-2"
-            >
-              <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 text-sm bg-indigo-500/20 text-indigo-400 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex gap-4">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-indigo-400 transition"
-                  >
-                    <FaGithub size={22} />
-                    <span>View on Github</span>
-                  </a>
-                )}
-              </div>
-
-            </motion.div>
-          ))}
-        </div>
-
       </div>
     </section>
   );
