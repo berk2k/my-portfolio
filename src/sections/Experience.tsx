@@ -4,20 +4,30 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    role: "Software Engineer (Part-time, Remote)",
+    company: "Nullware Digital | Bournemouth, UK",
+    date: "Jan 2026 – Present",
+    details: [
+      "Leading the backend development for a greenfield product, establishing API contracts and core system architecture.",
+      "Designing and implementing a modular authentication engine to standardize security across new services.",
+      "Working closely with the founder on system design, focusing on data modeling and scalable deployment strategies."
+    ],
+    tags: ["Node.js", "Redis", "System Design", "API Architecture"],
+  },
+  {
     role: "Software Engineer (Self-Employed)",
     company: "",
     date: "July 2025 – December 2025",
     details: [
       "Designed a multi-tenant API and database architecture with strict tenant isolation, focusing on scalability and operational readiness for a deployable MVP.",
-      "Implemented observability pipelines using OpenTelemetry, structured logging, and service-level dashboards, reducing debugging and root-cause analysis time by ~35% (internal estimate).",
+      "Enhanced system observability by implementing OpenTelemetry-based tracing and structured logging, significantly accelerating root-cause analysis and debugging processes.",
       "Built CI/CD pipelines using GitHub Actions and Docker-based deployments to support rapid iteration and reliable releases.",
-      "Worked close to system boundaries including APIs, databases, and infrastructure as part of a small engineering team.",
     ],
     tags: ["SaaS", "Multi-Tenancy", "Observability", "Docker", "CI/CD"],
   },
   {
-    role: "Data Engineer Intern",
-    company: "VakıfBank T.A.O · Istanbul, Turkey",
+    role: "Data Engineer (Internship)",
+    company: "VakifBank T.A.O · Istanbul, Turkey",
     date: "July 2023 – August 2023",
     details: [
       "Analyzed and cleansed multi-source datasets using Oracle SQL to improve data quality and reliability before data warehouse ingestion.",

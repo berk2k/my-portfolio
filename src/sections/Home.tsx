@@ -20,57 +20,67 @@ export default function Home() {
         transition={{ duration: 0.6 }}
       >
         {/* TITLE */}
-        <h1 className="text-3xl md:text-4xl font-semibold text-white">
+        <h1 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
           About Me
         </h1>
 
         {/* SHORT SUMMARY */}
-        <p className="text-gray-400 mt-4 text-base md:text-lg">
+        <p className="text-gray-400 mt-4 text-base md:text-lg font-medium">
           Backend & systems-focused software engineer interested in scalable,
           reliable, cloud-native systems and distributed architectures.
         </p>
 
         {/* MAIN TEXT */}
-        <p className="text-gray-400 mt-8 leading-relaxed text-sm md:text-base">
-          I design and build backend systems with a systems-oriented mindset,
-          focusing on multi-tenant SaaS platforms, event-driven microservices,
-          and observability-first architectures.
+        <p className="text-gray-400 mt-8 leading-relaxed text-sm md:text-base text-pretty">
+          I design and build backend systems with a focus on <strong>reliability and operational excellence</strong>. 
+          From architecting multi-tenant SaaS platforms to engineering high-throughput, 
+          backpressure-aware data pipelines, I bridge the gap between business requirements 
+          and system performance.
           <br />
           <br />
-          I enjoy working close to system boundaries such as APIs, databases,
-          messaging, and infrastructure, and understanding how design decisions
-          affect performance, reliability, and maintainability under real-world
-          constraints.
+          Beyond enterprise work, I contribute to the ecosystem by developing open-source tooling, 
+          such as <strong>FlowMediator</strong>, a .NET library focused on decoupling cross-cutting concerns.
+          <br />
+          <br />
+          I enjoy working close to system boundaries, APIs, database internals, and messaging, and 
+          exploring how lower-level constraints (like POSIX concurrency or Go runtime) 
+          shape higher-level architecture decisions.
         </p>
 
-        {/* FOCUS */}
-        <p className="text-gray-500 mt-6 text-sm">
-          Backend Systems · Distributed Systems · Cloud Architecture
-        </p>
+        {/* FOCUS - Styled to look like a terminal status bar */}
+        <div className="mt-8 py-2 px-4 bg-neutral-900/50 border border-neutral-800 rounded-lg inline-block">
+          <p className="text-indigo-400 text-xs md:text-sm font-mono tracking-wider">
+            Backend Systems · Distributed Systems · Cloud Architecture
+          </p>
+        </div>
 
         {/* STACK */}
-        <p className="text-gray-600 mt-2 text-sm">
-          .NET · Go · Node.js · Docker · Azure · CI/CD · Observability
+        <p className="text-gray-600 mt-4 text-xs font-mono uppercase tracking-[0.2em]">
+          .NET · Go · Node.js | Docker · Azure · Redis | Observability
         </p>
 
         {/* LINKS */}
-        <div className="mt-10 flex justify-center gap-6">
-          <a
+        <div className="mt-10 flex justify-center gap-8">
+          <motion.a
+            whileHover={{ scale: 1.05, color: "#ffffff" }}
             href="https://github.com/berk2k"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-400 hover:text-white transition"
+            className="text-sm text-gray-500 transition-colors duration-200 flex items-center gap-2"
           >
+            <span className="w-1.5 h-1.5 bg-gray-600 rounded-full"></span>
             GitHub
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.05, color: "#ffffff" }}
             href="https://www.linkedin.com/in/berk2k"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-400 hover:text-white transition"
+            className="text-sm text-gray-500 transition-colors duration-200 flex items-center gap-2"
           >
+            <span className="w-1.5 h-1.5 bg-gray-600 rounded-full"></span>
             LinkedIn
-          </a>
+          </motion.a>
         </div>
       </motion.div>
     </section>
