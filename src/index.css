@@ -1,1 +1,100 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --mono: 'IBM Plex Mono', monospace;
+  --serif: 'Instrument Serif', serif;
+}
+
+[data-theme='dark'] {
+  --bg: #0c0c0c;
+  --surface: #161616;
+  --border: #333333;
+  --text: #e8e4dc;
+  --muted: #aaa49e;
+  --accent: #dccfb8;
+  --accent-dim: rgba(220,207,184,0.12);
+  --hero-name: #f0ece4;
+  --desc: #b8b2aa;
+  --nav-bg: rgba(12,12,12,0.92);
+  --hover-row: rgba(255,255,255,0.03);
+}
+
+[data-theme='light'] {
+  --bg: #f5f3ef;
+  --surface: #eceae6;
+  --border: #c8c4bc;
+  --text: #1e1c1a;
+  --muted: #6a6560;
+  --accent: #7a5f3e;
+  --accent-dim: rgba(122,95,62,0.08);
+  --hero-name: #111008;
+  --desc: #4e4a46;
+  --nav-bg: rgba(245,243,239,0.92);
+  --hover-row: rgba(0,0,0,0.03);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 17px;
+  line-height: 1.75;
+  min-height: 100vh;
+  transition: background 0.25s, color 0.25s;
+}
+
+.site-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 96px 0 64px;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.25s;
+}
+
+section:last-of-type { border-bottom: none; }
+
+.section-label {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Tablet (max 768px) ── */
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  section { padding: 72px 0 48px; }
+  .site-wrapper { padding: 0 20px; }
+}
+
+/* ── Mobile (max 560px) ── */
+@media (max-width: 560px) {
+  body { font-size: 14px; }
+  .site-wrapper { padding: 0 16px; }
+  section { padding: 56px 0 40px; }
+  .section-label { font-size: 11px; margin-bottom: 28px; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,63 +1,54 @@
-import { useState } from "react";
+import { useState } from 'react'
+import { useTheme } from '../context/ThemeContext'
+import styles from './Navbar.module.css'
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar() {
+  const { theme, toggleTheme } = useTheme()
+  const [menuOpen, setMenuOpen] = useState(false)
 
-  const links = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
-    { name: "Writing", href: "#blog" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const closeMenu = () => setMenuOpen(false)
 
   return (
-    <nav className="fixed w-full top-0 left-0 bg-neutral-900/80 backdrop-blur-md z-50">
-      <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
-        {/* Logo (optional) */}
-        {/* <a href="#home" className="text-sm font-medium text-gray-200">Berk Polat</a> */}
+    <nav className={styles.nav}>
+      <div className={styles.inner}>
+        <a href="#about" className={styles.logo}>bp</a>
 
-        {/* Desktop */}
-        <ul className="hidden md:flex space-x-8 ml-auto">
-          {links.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                className="text-sm text-gray-300 hover:text-white transition-colors"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.right}>
+          {/* Desktop links */}
+          <ul className={styles.links}>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#oss">open source</a></li>
+            <li><a href="#experience">experience</a></li>
+            <li><a href="#writing">writing</a></li>
+          </ul>
 
-        {/* Mobile */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-300"
-        >
-          ☰
-        </button>
+          <button className={styles.toggle} onClick={toggleTheme}>
+            {theme === 'dark' ? 'light' : 'dark'}
+          </button>
+
+          {/* Hamburger button — mobile only */}
+          <button
+            className={styles.burger}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            <span className={`${styles.burgerLine} ${menuOpen ? styles.open : ''}`} />
+            <span className={`${styles.burgerLine} ${menuOpen ? styles.open : ''}`} />
+            <span className={`${styles.burgerLine} ${menuOpen ? styles.open : ''}`} />
+          </button>
+        </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden bg-neutral-900 px-4 pb-4">
-          <ul className="flex flex-col space-y-4">
-            {links.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  className="block text-sm text-gray-300 hover:text-white"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+      {/* Mobile dropdown */}
+      {menuOpen && (
+        <div className={styles.mobileMenu}>
+          <a href="#projects"   onClick={closeMenu}>projects</a>
+          <a href="#oss"        onClick={closeMenu}>open source</a>
+          <a href="#experience" onClick={closeMenu}>experience</a>
+          <a href="#writing"    onClick={closeMenu}>writing</a>
         </div>
       )}
     </nav>
-  );
-};
-
-export default Navbar;
+  )
+}

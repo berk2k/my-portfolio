@@ -1,0 +1,126 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ── Desktop links ── */
+.links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+
+.links a:hover { color: var(--text); }
+
+/* ── Theme toggle ── */
+.toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  line-height: 1;
+}
+
+.toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Hamburger button ── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 28px;
+  height: 28px;
+}
+
+.burgerLine {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--muted);
+  transition: transform 0.2s, opacity 0.2s, background 0.2s;
+  transform-origin: center;
+}
+
+/* X animasyonu */
+.burger .burgerLine.open:nth-child(1) { transform: translateY(6.5px) rotate(45deg); background: var(--accent); }
+.burger .burgerLine.open:nth-child(2) { opacity: 0; }
+.burger .burgerLine.open:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); background: var(--accent); }
+
+/* ── Mobile dropdown ── */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  padding: 12px 24px 20px;
+  border-top: 1px solid var(--border);
+  gap: 0;
+}
+
+.mobileMenu a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+
+.mobileMenu a:last-child { border-bottom: none; }
+.mobileMenu a:hover { color: var(--accent); }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .links { display: none; }
+  .burger { display: flex; }
+  .mobileMenu { display: flex; }
+}

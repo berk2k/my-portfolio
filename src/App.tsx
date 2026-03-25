@@ -1,30 +1,50 @@
-import Navbar from "./components/Navbar";
-import Home from "./sections/Home";
-//import Education from "./sections/Education";
-import Experience from "./sections/Experience";
-//import Skills from "./sections/Skills";
-
-import Projects from "./sections/Projects";
-//import Awards from "./sections/Awards"; 
-import Blog from "./sections/Blog";
-import Contact from "./sections/Contact";
+import { ThemeProvider } from './context/ThemeContext'
+import Navbar from './components/Navbar'
+import About from './sections/About'
+import Projects from './sections/Projects'
+import Experience from './sections/Experience'
+import Education from './sections/Education'
+import Writing from './sections/Writing'
+import OpenSource from './sections/OpenSource'
+import './index.css'
 
 function App() {
   return (
-    <div className="bg-neutral-900 text-gray-100 font-sans">
+    <ThemeProvider>
       <Navbar />
-      <main>
-        <Home />
-        {/* <Education /> */}
-        <Experience />
-        {/*<Skills /> */}
+
+      <div className="site-wrapper">
+        <About />
         <Projects />
-        {/*<Awards /> */}
-        <Blog />
-        <Contact />
-      </main>
-    </div>
-  );
+        <OpenSource />
+        <Experience />
+        <Education />
+        <Writing />
+      </div>
+
+      <footer
+        style={{
+          padding: '40px 0',
+          textAlign: 'center',
+          fontSize: '13px',
+          color: 'var(--muted)',
+          letterSpacing: '0.04em',
+        }}
+      >
+        <div className="site-wrapper">
+          {'berk polat · '}
+          <a
+            href="https://www.linkedin.com/in/berk2k/"
+            style={{ color: 'inherit', textDecoration: 'none' }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin
+          </a>
+        </div>
+      </footer>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
