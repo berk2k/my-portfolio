@@ -6,7 +6,7 @@ export default function Writing() {
       <div className="section-label">writing</div>
 
       <p className={styles.note}>
-        Backend and systems engineering on Medium{' '}
+        I am writing about Backend and systems engineering on Medium{' '}
       </p>
 
       <div className={styles.row}>
@@ -18,8 +18,6 @@ export default function Writing() {
         >
           All articles on Medium
         </a>
-
-        <span className={styles.tag}>medium.com/@berk2k</span>
       </div>
     </section>
   )

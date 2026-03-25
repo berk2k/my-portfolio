@@ -8,9 +8,9 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="section-label">projects</div>
-      {projects.map((p, i) => (
-        <div key={i} className={styles.row}>
-          <div className={styles.left}>
+      <div className={styles.grid}>
+        {projects.map((p, i) => (
+          <div key={i} className={styles.card}>
             <div className={styles.name}>{p.name}</div>
             <div className={styles.stack}>{p.stack}</div>
             <p className={styles.desc}>{p.description}</p>
@@ -23,21 +23,21 @@ export default function Projects() {
             {expanded === i && (
               <p className={styles.decision}>{p.keyDecision}</p>
             )}
+            <div className={styles.linkGroup}>
+              {p.github && (
+                <a href={p.github} className={styles.linkBtn} target="_blank" rel="noopener noreferrer">
+                  github ↗
+                </a>
+              )}
+              {p.designDoc && (
+                <a href={p.designDoc} className={styles.linkBtn} target="_blank" rel="noopener noreferrer">
+                  design doc ↗
+                </a>
+              )}
+            </div>
           </div>
-          <div className={styles.linkGroup}>
-            {p.github && (
-              <a href={p.github} className={styles.linkBtn} target="_blank" rel="noopener noreferrer">
-                github ↗
-              </a>
-            )}
-            {p.designDoc && (
-              <a href={p.designDoc} className={styles.linkBtn} target="_blank" rel="noopener noreferrer">
-                design doc ↗
-              </a>
-            )}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   )
 }
