@@ -81,7 +81,11 @@ export const jobs: Job[] = [
     period: 'Feb 2026 – Present · Remote, UK',
     role: 'Software Engineer · Part-time',
     bullets: [
-      'Inherited an undocumented codebase, mapped the architecture, and delivered a production-ready API baseline with structured logging (Pino), PII redaction, Prometheus metrics, auth, and rate limiting. Reduced new project setup from roughly 20 hours to under 2.',
+      'Analyzed fragmented auth patterns across existing projects, extracted reusable baseline, and built production-oriented API template with structured logging (Pino), PII redaction, Prometheus metrics, auth, and rate limiting, establishing a reusable foundation that reduces new project setup from ~20h to under 2h.',
+      'Proposed and led VPS migration after shared hosting lacked Node.js support and required costly separate managed services; co-located PostgreSQL, Redis, and API on a single private network, reducing infrastructure cost, accepting single-point-of-failure risk as a deliberate early-stage tradeoff.',
+      'Identified a missing cache layer in Firebase session verification; the first request populates the cache and subsequent requests are served from it, reducing auth latency from ~4s to 11ms.',
+      'Identified TOCTOU race condition in Stripe webhook handler; resolved by moving idempotency guard inside the database transaction, ensuring atomic duplicate prevention at DB level before any side effects execute.',
+      'Optimized enrollment fetching with batched queries (2N to 2 fixed) and O(N^2) to O(N) in-memory grouping via Map; response time improved 19% at 9 courses, gains compound with scale.'
     ],
   },
   {
