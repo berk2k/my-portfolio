@@ -15,9 +15,9 @@ function App() {
 
       <div className="site-wrapper">
         <About />
+        <Experience />
         <Projects />
         <OpenSource />
-        <Experience />
         <Education />
         <Writing />
       </div>

@@ -17,8 +17,8 @@ export default function Navbar() {
           {/* Desktop links */}
           <ul className={styles.links}>
             <li><a href="#projects">projects</a></li>
-            <li><a href="#oss">open source</a></li>
             <li><a href="#experience">experience</a></li>
+            <li><a href="#oss">open source</a></li>
             <li><a href="#writing">writing</a></li>
           </ul>
 

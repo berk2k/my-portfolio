@@ -1,3 +1,4 @@
+.list { display: flex; flex-direction: column; gap: 28px; }
 
 .header {
   display: flex;
@@ -8,8 +9,20 @@
   margin-bottom: 4px;
 }
 
-.school { font-size: 15px; color: var(--text); font-weight: 500; }
-.period { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+.school { 
+  font-size: 15px; 
+  color: var(--text); 
+  font-weight: 500;
+  flex: 1;
+  min-width: 0;
+}
+
+.period { 
+  font-size: 12px; 
+  color: var(--muted); 
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
 
 .degree {
   font-size: 13px;
@@ -19,12 +32,12 @@
 }
 
 .note {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--desc);
+  line-height: 1.75;
 }
 
 @media (max-width: 560px) {
   .header { flex-direction: column; gap: 2px; }
   .school { font-size: 14px; }
-  .note { font-size: 13px; }
 }

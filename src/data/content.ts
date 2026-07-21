@@ -7,17 +7,27 @@ export interface Project {
   designDoc?: string
 }
 
+export interface FeaturedWork {
+  name: string
+  url: string
+  tagline: string
+  bullets: string[]
+}
+
 export interface Job {
   company: string
   period: string
   role: string
+  summary?: string
+  featuredWork?: FeaturedWork
   bullets?: string[]
 }
+
 
 export const projects: Project[] = [
   {
     name: 'In-Memory Message Broker',
-    stack: 'Go · Feb – Mar 2026',
+    stack: 'Go · Feb – May 2026',
     description:
       'A message broker built to deeply understand delivery semantics: lease-based processing, visibility timeouts, at-least-once guarantees, and DLQ isolation. The broker implements a 3-state message lifecycle (Ready → Inflight → Done) with crash recovery built in from the start.',
     keyDecision:
@@ -35,22 +45,23 @@ export const projects: Project[] = [
     github: 'https://github.com/berk2k/transcodeX',
     designDoc: 'https://github.com/berk2k/transcodeX/blob/master/DESIGN.md',
   },
+]
+
+export const otherProjects: Project[] = [
   {
     name: 'Multi-Tenant Booking Backend',
     stack: '.NET · Jul 2025 – Jan 2026',
     description:
-      'A booking system where correctness under concurrent writes was the central problem. Double-booking is a classic race condition: two requests read availability, both see a free slot, both write a booking. An advisory lock is one solution, but it puts the correctness guarantee in the application layer — any code path that skips the lock breaks the invariant.',
-    keyDecision:
-      'Used PostgreSQL Serializable isolation instead of advisory locks. At Serializable, the database detects conflicting concurrent transactions and aborts one — the guarantee holds regardless of how the application is written. Multi-tenancy uses a shared-schema approach with TenantId-based row isolation, verified to block cross-tenant data access under concurrent injection attempts.',
+      'A booking system where correctness under concurrent writes was the central problem.',
+    keyDecision: '',
     designDoc: 'https://booking-backend-docs.netlify.app/',
   },
   {
     name: 'Pressure Lab',
     stack: 'Go · 2025',
     description:
-      'A learning lab studying how a network-facing backend behaves under sustained load. The central question: where does pressure accumulate, and how does it propagate upstream? Two backpressure forms were compared directly — implicit (latency-based) and explicit (HTTP 429). The implicit form was the more dangerous one: the system appeared healthy from the outside while goroutines stacked and connections held open internally.',
-    keyDecision:
-      'Rate limiting and capacity are not interchangeable. Raising the rate limit without scaling workers only accelerates queue saturation. The lab makes this observable: set rate limit to 50 RPS with a 2 RPS worker, watch the queue fill in seconds. Proactive rate limiting at the boundary keeps workers at a steady state; reactive backpressure only kicks in after the damage is done.',
+      'A learning lab studying how a network-facing backend behaves under sustained load. The central question: where does pressure accumulate, and how does it propagate upstream?',
+    keyDecision: '',
     github: 'https://github.com/berk2k/pressure-lab',
     designDoc: 'https://github.com/berk2k/pressure-lab/blob/main/DESIGN.md',
   },
@@ -58,35 +69,38 @@ export const projects: Project[] = [
     name: 'High-Throughput Log Pipeline',
     stack: 'Go · 2025',
     description:
-      'A log processing pipeline modelled after Logstash, Fluent Bit, and Kafka producers — built to make their internal mechanics explicit. Implements adaptive backpressure, dynamic worker scaling based on queue utilisation, and batch flushing on size or timeout. The focus was on graceful degradation: no log loss on shutdown, producer rate adapts when the queue fills.',
-    keyDecision:
-      'The autoscaler uses threshold-based hysteresis (scale up at 80%, scale down at 20%) rather than reactive event-driven scaling. The gap between thresholds prevents oscillation — a behavior Kubernetes HPA uses for the same reason. Workers flush their in-flight batch before exiting, which is what makes zero-loss shutdown possible.',
+      'A log processing pipeline built to make internal mechanics of batching, backpressure, and worker scaling explicit.',
+    keyDecision: '',
     github: 'https://github.com/berk2k/log-processing-pipeline',
     designDoc: 'https://github.com/berk2k/log-processing-pipeline/blob/main/DESIGN.md',
   },
-  {
-    name: 'POSIX Concurrency Systems',
-    stack: 'C · 2025',
-    description:
-      'Two MapReduce-style programs implemented four ways: pthreads, fork + pipes, shared memory with POSIX semaphores, and atomic CAS. The goal was empirical: measure where each model breaks down rather than reason about it abstractly.',
-    keyDecision:
-      'For fine-grained shared-state updates (a single max value), synchronization overhead dominates — adding workers does not improve runtime regardless of the primitive. Atomic CAS and mutex performed nearly identically at 8 workers, because the bottleneck was not lock acquisition itself but the cache coherence traffic contention generated.',
-    github: 'https://github.com/berk2k/posix-concurrency-systems',
-  },
+  // {
+  //   name: 'POSIX Concurrency Systems',
+  //   stack: 'C · 2025',
+  //   description:
+  //     'Two MapReduce-style programs implemented four ways: pthreads, fork + pipes, shared memory with POSIX semaphores, and atomic CAS.',
+  //   keyDecision: '',
+  //   github: 'https://github.com/berk2k/posix-concurrency-systems',
+  // },
 ]
 
 export const jobs: Job[] = [
   {
     company: 'Nullware Digital',
-    period: 'Feb 2026 – Present · Remote, UK',
+    period: 'Jan 2026 – Present · Remote, UK',
     role: 'Software Engineer · Part-time',
-    bullets: [
-      'Analyzed fragmented auth patterns across existing projects, extracted reusable baseline, and built production-oriented API template with structured logging (Pino), PII redaction, Prometheus metrics, auth, and rate limiting, establishing a reusable foundation that reduces new project setup from ~20h to under 2h.',
-      'Proposed and led VPS migration after shared hosting lacked Node.js support and required costly separate managed services; co-located PostgreSQL, Redis, and API on a single private network, reducing infrastructure cost, accepting single-point-of-failure risk as a deliberate early-stage tradeoff.',
-      'Identified a missing cache layer in Firebase session verification; the first request populates the cache and subsequent requests are served from it, reducing auth latency from ~4s to 11ms.',
-      'Identified TOCTOU race condition in Stripe webhook handler; resolved by moving idempotency guard inside the database transaction, ensuring atomic duplicate prevention at DB level before any side effects execute.',
-      'Optimized enrollment fetching with batched queries (2N to 2 fixed) and O(N^2) to O(N) in-memory grouping via Map; response time improved 19% at 9 courses, gains compound with scale.'
-    ],
+    summary: 'Led backend and infrastructure development for TechLearn.ai within a four-person team, taking end-to-end ownership from architecture through production operation.',
+    featuredWork: {
+      name: 'TechLearn.ai',
+      url: 'https://techlearn.ai',
+      tagline: 'A multilingual online learning platform built under Nullware Digital. Owned backend, infrastructure, auth, payment, and AI content-generation systems end-to-end.',
+      bullets: [
+        'Reduced per-course generation time from 4+ hours to 13.5 minutes by replacing a sequential workflow with a Redis-backed BullMQ pipeline.',
+        'Diagnosed and resolved a production authentication outage caused by broken outbound IPv6 routing.',
+        'Migrated the platform to an Ubuntu VPS with PostgreSQL, Redis, and the API isolated on a private network.',
+        'Prevented duplicate Stripe webhook processing by moving the idempotency guard inside the database transaction.',
+      ],
+    },
   },
   {
     company: 'VakifBank',
@@ -98,9 +112,17 @@ export const jobs: Job[] = [
   },
 ]
 
-export const education = {
-  school: 'Yasar University',
-  period: 'Sep 2019 – Jul 2024 · Izmir / Türkiye',
-  degree: 'B.Sc. Software Engineering',
-  note: 'CGPA 3.25/4.00 · Graduated 3rd in department',
-}
+export const education = [
+  {
+    school: 'Eindhoven University of Technology (TU/e)',
+    period: 'Starting Sep 2026 · Eindhoven, Netherlands',
+    degree: 'M.Sc. Computer Science and Engineering',
+    note: 'Focus: Systems, distributed software, and software architecture',
+  },
+  {
+    school: 'Yaşar University',
+    period: 'Sep 2019 – Jul 2024 · İzmir, Türkiye',
+    degree: 'B.Sc. Software Engineering',
+    note: 'Graduated 3rd in department',
+  },
+]

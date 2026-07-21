@@ -6,7 +6,7 @@ export default function Writing() {
       <div className="section-label">writing</div>
 
       <p className={styles.note}>
-        I am writing about Backend and systems engineering on Medium{' '}
+        I am writing about software engineering and distributed systems on Medium{' '}
       </p>
 
       <div className={styles.row}>

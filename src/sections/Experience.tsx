@@ -13,6 +13,38 @@ export default function Experience() {
               <span className={styles.period}>{job.period}</span>
             </div>
             <div className={styles.role}>{job.role}</div>
+
+            {job.summary && (
+              <p className={styles.summary}>{job.summary}</p>
+            )}
+
+            {job.featuredWork && (
+              <div className={styles.featured}>
+                <div className={styles.featuredHeader}>
+                  <span className={styles.featuredLabel}>Featured Work</span>
+
+                  <a
+                    href={job.featuredWork.url}
+                    className={styles.featuredName}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {job.featuredWork.name} ↗
+                  </a>
+                </div>
+
+                <p className={styles.featuredTagline}>
+                  {job.featuredWork.tagline}
+                </p>
+
+                <ul className={styles.bullets}>
+                  {job.featuredWork.bullets.map((b, j) => (
+                    <li key={j}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {job.bullets && (
               <ul className={styles.bullets}>
                 {job.bullets.map((b, j) => (

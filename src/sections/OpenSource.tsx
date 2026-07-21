@@ -17,7 +17,7 @@ export default function OpenSource() {
             a recurring pattern in .NET applications where command/query flows
             and event handling get tangled through a single dispatch path —
             the separation makes the intent visible in the type system.
-            Published as a NuGet package, actively maintained since August 2025.
+            Published as a NuGet package.
           </p>
         </div>
 

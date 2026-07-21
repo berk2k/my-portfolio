@@ -19,6 +19,51 @@
   margin-bottom: 10px;
 }
 
+.summary {
+  font-size: 13px;
+  color: var(--desc);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.featured {
+  border-left: 2px solid var(--border);
+  padding-left: 16px;
+  margin-bottom: 8px;
+  transition: border-color 0.25s;
+}
+
+.featuredHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.featuredLabel {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.featuredName {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.featuredName:hover { color: var(--accent); }
+
+.featuredTagline {
+  font-size: 13px;
+  color: var(--desc);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
 .bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 
 .bullets li {
@@ -40,4 +85,5 @@
   .header { flex-direction: column; gap: 2px; }
   .company { font-size: 14px; }
   .bullets li { font-size: 13px; }
+  .featured { padding-left: 12px; }
 }

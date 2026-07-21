@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { projects } from '../data/content'
+import { projects, otherProjects } from '../data/content'
 import styles from './Projects.module.css'
 
 export default function Projects() {
   const [expanded, setExpanded] = useState<number | null>(null)
+  const [showMore, setShowMore] = useState(false)
 
   return (
     <section id="projects">
@@ -38,6 +39,38 @@ export default function Projects() {
           </div>
         ))}
       </div>
+
+      <button
+        className={styles.showMoreBtn}
+        onClick={() => setShowMore(v => !v)}
+      >
+        {showMore ? '− hide projects' : `+ ${otherProjects.length} more projects`}
+      </button>
+
+      {showMore && (
+        <div className={styles.otherList}>
+          {otherProjects.map((p, i) => (
+            <div key={i} className={styles.otherItem}>
+              <div className={styles.otherTop}>
+                <span className={styles.otherName}>{p.name}</span>
+                <div className={styles.linkGroup}>
+                  {p.github && (
+                    <a href={p.github} className={styles.linkBtn} target="_blank" rel="noopener noreferrer">
+                      github ↗
+                    </a>
+                  )}
+                  {p.designDoc && (
+                    <a href={p.designDoc} className={styles.linkBtn} target="_blank" rel="noopener noreferrer">
+                      design doc ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+              <p className={styles.otherDesc}>{p.description}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   )
 }
