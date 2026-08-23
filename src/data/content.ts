@@ -87,9 +87,9 @@ export const otherProjects: Project[] = [
 export const jobs: Job[] = [
   {
     company: 'Nullware Digital',
-    period: 'Jan 2026 – Present · Remote, UK',
+    period: 'Jan 2026 – Aug 2026 · Remote, UK',
     role: 'Software Engineer · Part-time',
-    summary: 'Led backend and infrastructure development for TechLearn.ai within a four-person team, taking end-to-end ownership from architecture through production operation.',
+    summary: 'Led backend and infrastructure development for TechLearn.ai within a five-person team, taking end-to-end ownership from architecture through production operation.',
     featuredWork: {
       name: 'TechLearn.ai',
       url: 'https://techlearn.ai',
@@ -97,7 +97,7 @@ export const jobs: Job[] = [
       bullets: [
         'Reduced per-course generation time from 4+ hours to 13.5 minutes by replacing a sequential workflow with a Redis-backed BullMQ pipeline.',
         'Diagnosed and resolved a production authentication outage caused by broken outbound IPv6 routing.',
-        'Migrated the platform to an Ubuntu VPS with PostgreSQL, Redis, and the API isolated on a private network.',
+        'Built TechLearn.ai’s production environment from scratch on an Ubuntu VPS, co-locating PostgreSQL, Redis, and the API on a private network.',
         'Prevented duplicate Stripe webhook processing by moving the idempotency guard inside the database transaction.',
       ],
     },
@@ -107,7 +107,7 @@ export const jobs: Job[] = [
     period: 'Jul – Aug 2023 · Istanbul',
     role: 'Data Engineer Intern',
     bullets: [
-      'Supported SCD Type 1 ETL workflows in a production Oracle data warehouse environment using Informatica.',
+      'Applied SCD Type 1 logic to keep data warehouse records up to date across tables sourced from multiple upstream systems.',
     ],
   },
 ]
@@ -115,13 +115,13 @@ export const jobs: Job[] = [
 export const education = [
   {
     school: 'Eindhoven University of Technology (TU/e)',
-    period: 'Starting Sep 2026 · Eindhoven, Netherlands',
+    period: 'Aug 2026 · Eindhoven, Netherlands',
     degree: 'M.Sc. Computer Science and Engineering',
-    note: 'Focus: Systems, distributed software, and software architecture',
+    note: 'Focus: Distributed software, ML/AI, and High-tech systems',
   },
   {
-    school: 'Yaşar University',
-    period: 'Sep 2019 – Jul 2024 · İzmir, Türkiye',
+    school: 'Yasar University',
+    period: 'Sep 2019 – Jul 2024 · Izmir, Türkiye',
     degree: 'B.Sc. Software Engineering',
     note: 'Graduated 3rd in department',
   },
